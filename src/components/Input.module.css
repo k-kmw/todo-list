@@ -1,0 +1,25 @@
+.container {
+    width: 100%;
+}
+
+.form {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    width: 40%;
+    height: 40px;
+    border: none;
+}
+
+.btn {
+    height: 40px;
+    background-color: transparent;
+    font-weight: 600;
+    border: none;
+    margin-left: 3px;
+    font-size: 28px;
+    color: lightgray;
+}

@@ -46,13 +46,11 @@ function App() {
 
     const modifiedSubmit = (e) => {
       e.preventDefault();
-      // console.log(e)
-      if(e.target.childElementCount >= 4) 
+      if(e.target.length >= 3) 
       {
         return;
       }
       addBtn();
-      
     }
 
     const allBtn = () => {
@@ -69,19 +67,18 @@ function App() {
       setStatus('PROGRESS')
     }
     
-    const onModify = (id) => {
+    const onModify = (id, text) => {
+      setModify(text);
       setToDos((toDos) => 
       toDos.map((toDo) => toDo.id === id ? ({...toDo, modify: !toDo.modify}) : toDo))
     }
     
-    const onModified = (e, id) => {
-      const modifyText = e.target.previousSibling.value
+    const onModified = (id) => {
       setToDos((toDos) => 
-      toDos.map((toDo) => toDo.id === id ? ({...toDo, modify: !toDo.modify}) : toDo))
-      setToDos((toDos) => toDos.map((toDo) => toDo.id === id ? {...toDo, text: modifyText} : toDo))
+      toDos.map((toDo) => toDo.id === id ? ({...toDo, modify: !toDo.modify, text:modify}) : toDo))
     }
 
-    const onModifyChange = (e, id) => {
+    const onModifyChange = (e) => {
       setModify(e.target.value)
     }
 

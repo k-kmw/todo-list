@@ -1,0 +1,27 @@
+.header {
+    width: 50%;
+    text-align: center;
+}
+
+.title {
+    margin: 8px 0;
+    margin-top: 13%;
+}
+
+.categoryContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.categoryBtn {
+    margin: 0 5px;
+    background-color: #85a292;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.categoryBtn:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
