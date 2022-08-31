@@ -82,6 +82,10 @@ function App() {
       setModify(e.target.value)
     }
 
+    const isChecked = (id) => {
+      setToDos(toDos.map(toDo => toDo.id === id ? {...toDo, done: !toDo.done} : toDo))
+  }
+
     return (
         <div className={styles.container}>
           <Header toDos={toDos}
@@ -100,7 +104,6 @@ function App() {
 
           <List toDos={toDos}
           deleteBtn={deleteBtn}
-          storageKey={STORAGE_KEY}
           setToDos={setToDos}
           completed={completed}
           status={status}
@@ -110,6 +113,7 @@ function App() {
           onModifyChange={onModifyChange}
           modify={modify}
           modifiedSubmit={modifiedSubmit}
+          isChecked={isChecked}
           />
         </div>
     );

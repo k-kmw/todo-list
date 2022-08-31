@@ -1,13 +1,8 @@
 import PropTypes from "prop-types";
 import styles from './List.module.css';
 
-function List({toDos, deleteBtn, storageKey, setToDos, completed, progress, 
+function List({toDos, deleteBtn, isChecked, completed, progress, 
     status, onModify, onModified, onModifyChange, modify, modifiedSubmit}) {
-
-    const isChecked = (e, id) => {
-        setToDos(toDos.map(toDo => toDo.id === id ? {...toDo, done: !toDo.done} : toDo))
-        localStorage.setItem(storageKey, JSON.stringify(toDos));
-    }
 
     if(status === "ALL") {
         return (
@@ -19,7 +14,7 @@ function List({toDos, deleteBtn, storageKey, setToDos, completed, progress,
                     <form className={styles.item__form} onSubmit={modifiedSubmit}>
                         <div>
                             <input type="checkbox"
-                            onClick={(e) => isChecked(e, toDo.id, toDo.done)}
+                            onClick={() => isChecked(toDo.id)}
                             checked = {toDo.done ? true : false}
                             readOnly
                             />
