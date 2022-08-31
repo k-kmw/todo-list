@@ -1,18 +1,20 @@
 .header {
-    width: 50%;
+    width: 100%;
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
+    margin-top: 24px;
 }
 
 .title {
     margin: 18px 0;
-    margin-top: 13%;
 }
 
 .categoryContainer {
+    width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 12px;
+    margin-top: 1px;
 }
 
 .categoryBtn {
@@ -25,4 +27,14 @@
 .categoryBtn:hover {
     transform: translateY(-1px);
     opacity: 0.9;
+}
+
+@media screen and (max-width: 634px) {
+    .header {
+        margin-top: 32px;
+    }
+
+    .categoryContainer{
+        margin-left: 2px;
+    }
 }

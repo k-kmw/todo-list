@@ -23,3 +23,9 @@
     font-size: 28px;
     color: lightgray;
 }
+
+@media screen and (max-width: 634px) {
+    .input {
+        width: 70%;
+    }
+}
